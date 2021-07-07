@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from core.views import CarsView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', CarsView.as_view()),
-]
+] + staticfiles_urlpatterns()
